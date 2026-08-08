@@ -3,23 +3,33 @@ import SwiftUI
 var rightArm: some BodyPart {
     RightArm {
         RightUpperArmSegment {
-            ZStack {
-                Rectangle()
-                    .frame(width: 30, height: 200)
-                    .foregroundStyle(.orange)
-            }
+            FurryArmShape()
+                .fill(
+                    LinearGradient(
+                        stops: stripeStops,
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
+                .frame(width: 150, height: 220)
+                .rotationEffect(.degrees(-20), anchor: UnitPoint(x: 0.5, y: 1.0))
         }
     } foreArm: {
         RightLowerArmSegment {
-            ZStack {
-                Rectangle()
-                    .frame(width: 30, height: 200)
-                    .foregroundStyle(.red)
-            }
+            FurryArmShape()
+                .fill(
+                    LinearGradient(
+                        stops: stripeStops,
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
+                .frame(width: 150, height: 220)
+                .rotationEffect(.degrees(-20), anchor: UnitPoint(x: 0.5, y: 0.0))
         }
     }
 }
 
-#Preview(traits: .fixedLayout(width: 200, height: 200)) {
+#Preview(traits: .fixedLayout(width: 400, height: 600)) {
     rightArm
 }
