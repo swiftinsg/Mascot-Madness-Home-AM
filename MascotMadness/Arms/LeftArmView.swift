@@ -16,16 +16,24 @@ var leftArm: some BodyPart {
         }
     } foreArm: {
         LeftLowerArmSegment {
-            FurryArmShape()
-                .fill(
-                    LinearGradient(
-                        stops: stripeStops,
-                        startPoint: .top,
-                        endPoint: .bottom
+            ZStack {
+                FurryArmShape()
+                    .fill(
+                        LinearGradient(
+                            stops: stripeStops,
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
                     )
-                )
-                .frame(width: 150, height: 220)
-                .rotationEffect(.degrees(250), anchor: UnitPoint(x: 0.5, y: 0.0))
+                    .frame(width: 150, height: 220)
+                    .rotationEffect(.degrees(250), anchor: UnitPoint(x: 0.5, y: 0.0))
+
+                Text("🌹")
+                    .font(.system(size: 72))
+                    .offset(y: 110)
+                    .rotationEffect(.degrees(250), anchor: UnitPoint(x: 0.5, y: 0.0))
+                    .rotationEffect(.degrees(-250))
+            }
         }
     }
 }
